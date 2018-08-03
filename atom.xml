@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://shangyd.github.io/"/>
-  <updated>2018-08-01T17:40:06.724Z</updated>
+  <updated>2018-08-03T11:03:10.555Z</updated>
   <id>http://shangyd.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>小白爬坑记之Git坑（一）</title>
+    <link href="http://shangyd.github.io/2018/08/03/%E5%B0%8F%E7%99%BD%E7%88%AC%E5%9D%91%E8%AE%B0%E4%B9%8BGit%E5%9D%91(%E4%B8%80)/"/>
+    <id>http://shangyd.github.io/2018/08/03/小白爬坑记之Git坑(一)/</id>
+    <published>2018-08-03T10:11:38.000Z</published>
+    <updated>2018-08-03T11:03:10.555Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h2><p>什么是版本库呢？版本库又名仓库，英文名repository，你可以简单理解成一个目录，这个目录里面的所有文件都可以被Git管理起来，每个文件的修改、删除，Git都能跟踪，以便任何时刻都可以追踪历史，或者在将来某个时刻可以“还原”。<br>所以，创建一个版本库非常简单，首先，选择一个合适的地方，创建一个空目录：</p><h3 id="第一步，进入项目文件夹右键-点击-Git-Bash-Here，依次键入："><a href="#第一步，进入项目文件夹右键-点击-Git-Bash-Here，依次键入：" class="headerlink" title="第一步，进入项目文件夹右键 点击 Git Bash Here，依次键入："></a>第一步，进入项目文件夹右键 点击 Git Bash Here，依次键入：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir learngit </span><br><span class="line">$ <span class="built_in">cd</span> learngit</span><br><span class="line">$ <span class="built_in">pwd</span></span><br><span class="line">/e/shang/JavaScript/learngit</span><br></pre></td></tr></table></figure><h3 id="第二步，通过git-init命令把这个目录变成Git可以管理的仓库："><a href="#第二步，通过git-init命令把这个目录变成Git可以管理的仓库：" class="headerlink" title="第二步，通过git init命令把这个目录变成Git可以管理的仓库："></a>第二步，通过git init命令把这个目录变成Git可以管理的仓库：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">Initialized empty Git repository <span class="keyword">in</span> E:/shang/JavaScript/learngit/.git/</span><br></pre></td></tr></table></figure><p>瞬间Git就把仓库建好了，而且告诉你是一个空的仓库（empty Git repository），细心的读者可以发现当前目录下多了一个.git的目录，这个目录是Git来跟踪管理版本库的，没事千万不要手动修改这个目录里面的文件，不然改乱了，就把Git仓库给破坏了。<br>如果你没有看到.git目录，那是因为这个目录默认是隐藏的，用<code>ls -ah</code>命令就可以看见。</p><h3 id="第三步，新建文本，编辑文本内容"><a href="#第三步，新建文本，编辑文本内容" class="headerlink" title="第三步，新建文本，编辑文本内容"></a>第三步，新建文本，编辑文本内容</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ vi readme.txt</span><br><span class="line">~ Git is a version control system.</span><br><span class="line">~ Git is free software.</span><br></pre></td></tr></table></figure><p>按Esc切换到命令模式<br>在命令模式下键入<code>:wq</code>保存修改并且退出 vi</p><h3 id="第四步，把文件添加到版本库用命令git-add告诉Git，把文件添加到仓库："><a href="#第四步，把文件添加到版本库用命令git-add告诉Git，把文件添加到仓库：" class="headerlink" title="第四步，把文件添加到版本库用命令git add告诉Git，把文件添加到仓库："></a>第四步，把文件添加到版本库用命令git add告诉Git，把文件添加到仓库：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git add readme.txt</span><br></pre></td></tr></table></figure><p>执行上面的命令，没有任何显示，这就对了，Unix的哲学是“没有消息就是好消息”，说明添加成功。<br>但是我使用的是window系统，在这里报错了个错……</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add readme.txt</span><br><span class="line">warning: LF will be replaced by CRLF <span class="keyword">in</span> readme.txt.</span><br><span class="line">The file will have its original line endings <span class="keyword">in</span> your working directory.</span><br></pre></td></tr></table></figure><h4 id="解决方案："><a href="#解决方案：" class="headerlink" title="解决方案："></a>解决方案：</h4><blockquote><p> 删除.git<br>   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf .git</span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>禁用自动转换，即将设置：<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">false</span></span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>再重新初始化，并执行添加add操作(重复step2-4)</p></blockquote><p>Bingo 问题就解决了~~~</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;创建版本库&quot;&gt;&lt;a href=&quot;#创建版本库&quot; class=&quot;headerlink&quot; title=&quot;创建版本库&quot;&gt;&lt;/a&gt;创建版本库&lt;/h2&gt;&lt;p&gt;什么是版本库呢？版本库又名仓库，英文名repository，你可以简单理解成一个目录，这个目录里面的所有文件都可以被
+      
+    
+    </summary>
+    
+      <category term="Git" scheme="http://shangyd.github.io/categories/Git/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>小白爬坑记之webpack配置（一）</title>
     <link href="http://shangyd.github.io/2018/08/01/%E5%B0%8F%E7%99%BD%E7%88%AC%E5%9D%91%E8%AE%B0/"/>
     <id>http://shangyd.github.io/2018/08/01/小白爬坑记/</id>
     <published>2018-07-31T19:45:38.000Z</published>
-    <updated>2018-08-01T17:40:06.724Z</updated>
+    <updated>2018-08-03T10:12:37.879Z</updated>
     
     <summary type="html">
     
