@@ -47,6 +47,32 @@
 
 
 
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
 
 
 
@@ -85,15 +111,18 @@
 
 
 
+<meta name="description" content="小白webpack爬坑记webpack@4.14.0webpack入门之使用第三方包author 道姑，请留步  webpack一款打包工具（别人说这个好，我是不了解的，但是别人说好，咱就用吧！） 前面的配置啥的我就不记述了，我只记述一下关于我在webpack加载第三方库遇到的问题，bootstrap 和 jquery同时使用时，jquery失效。 入口js文件main.js文件导入顺序1234">
 <meta name="keywords" content="web前端">
 <meta property="og:type" content="article">
 <meta property="og:title" content="小白爬坑记之webpack配置（一）">
-<meta property="og:url" content="http://shangyd.github.io/2018/08/01/小白爬坑记/index.html">
+<meta property="og:url" content="http://shangyd.github.io/2018/08/01/小白爬坑记之webpack坑/index.html">
 <meta property="og:site_name" content="道姑·请留步">
+<meta property="og:description" content="小白webpack爬坑记webpack@4.14.0webpack入门之使用第三方包author 道姑，请留步  webpack一款打包工具（别人说这个好，我是不了解的，但是别人说好，咱就用吧！） 前面的配置啥的我就不记述了，我只记述一下关于我在webpack加载第三方库遇到的问题，bootstrap 和 jquery同时使用时，jquery失效。 入口js文件main.js文件导入顺序1234">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-03T10:12:37.879Z">
+<meta property="og:updated_time" content="2018-08-03T16:28:05.461Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小白爬坑记之webpack配置（一）">
+<meta name="twitter:description" content="小白webpack爬坑记webpack@4.14.0webpack入门之使用第三方包author 道姑，请留步  webpack一款打包工具（别人说这个好，我是不了解的，但是别人说好，咱就用吧！） 前面的配置啥的我就不记述了，我只记述一下关于我在webpack加载第三方库遇到的问题，bootstrap 和 jquery同时使用时，jquery失效。 入口js文件main.js文件导入顺序1234">
 
 
 
@@ -123,7 +152,7 @@
 
 
 
-  <link rel="canonical" href="http://shangyd.github.io/2018/08/01/小白爬坑记/"/>
+  <link rel="canonical" href="http://shangyd.github.io/2018/08/01/小白爬坑记之webpack坑/"/>
 
 
 
@@ -350,7 +379,7 @@ $(function() {
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://shangyd.github.io/2018/08/01/小白爬坑记/">
+    <link itemprop="mainEntityOfPage" href="http://shangyd.github.io/2018/08/01/小白爬坑记之webpack坑/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="shang.yd">
@@ -420,8 +449,8 @@ $(function() {
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/01/小白爬坑记/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/08/01/小白爬坑记/" itemprop="commentsCount"></span>
+                <a href="/2018/08/01/小白爬坑记之webpack坑/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/08/01/小白爬坑记之webpack坑/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -429,7 +458,7 @@ $(function() {
 
           
           
-             <span id="/2018/08/01/小白爬坑记/" class="leancloud_visitors" data-flag-title="小白爬坑记之webpack配置（一）">
+             <span id="/2018/08/01/小白爬坑记之webpack坑/" class="leancloud_visitors" data-flag-title="小白爬坑记之webpack配置（一）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -460,7 +489,24 @@ $(function() {
       
 
       
-        
+        <blockquote>
+<p>小白webpack爬坑记<br><a href="mailto:webpack@4.14.0" target="_blank" rel="noopener">webpack@4.14.0</a><br>webpack入门之使用第三方包<br>author 道姑，请留步</p>
+</blockquote>
+<p>webpack一款打包工具（别人说这个好，我是不了解的，但是别人说好，咱就用吧！）</p>
+<p>前面的配置啥的我就不记述了，我只记述一下关于我在webpack加载第三方库遇到的问题，bootstrap 和 jquery同时使用时，jquery失效。</p>
+<p>入口js文件main.js文件导入顺序<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> $ <span class="keyword">from</span> <span class="string">'jquery'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'../css/style.css'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'bootstrap/dist/css/bootstrap.min.css'</span>;</span><br><span class="line"><span class="keyword">import</span> <span class="string">'bootstrap/dist/js/bootstrap.min.js'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>如何解决问题：<br>主要最后安装的几个依赖文件是：<br><code>echarts,peer,Popper</code></p>
+<p><code>package.json</code>文件中配置：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"dependencies"</span>: &#123;</span><br><span class="line">        <span class="string">"babel-core"</span>: <span class="string">"^6.26.3"</span>,</span><br><span class="line">        <span class="string">"babel-loader"</span>: <span class="string">"^7.1.4"</span>,</span><br><span class="line">        <span class="string">"babel-preset-env"</span>: <span class="string">"^1.7.0"</span>,</span><br><span class="line">        <span class="string">"bootstrap-loader"</span>: <span class="string">"^3.0.0"</span>,</span><br><span class="line">        <span class="string">"css-loader"</span>: <span class="string">"^0.28.11"</span>,</span><br><span class="line">        <span class="string">"echarts"</span>: <span class="string">"^4.1.0"</span>,</span><br><span class="line">        <span class="string">"expose-loader"</span>: <span class="string">"^0.7.5"</span>,</span><br><span class="line">        <span class="string">"peer"</span>: <span class="string">"^0.2.8"</span>,</span><br><span class="line">        <span class="string">"postcss-loader"</span>: <span class="string">"^2.1.5"</span>,</span><br><span class="line">        <span class="string">"style-loader"</span>: <span class="string">"^0.21.0"</span>,</span><br><span class="line">        <span class="string">"url"</span>: <span class="string">"^0.11.0"</span>,</span><br><span class="line">        <span class="string">"url-loader"</span>: <span class="string">"^1.0.1"</span>,</span><br><span class="line">        <span class="string">"webpack"</span>: <span class="string">"^4.14.0"</span>,</span><br><span class="line">        <span class="string">"webpack-cli"</span>: <span class="string">"^3.0.8"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="string">"devDependencies"</span>: &#123;</span><br><span class="line">        <span class="string">"babel-preset-es2015"</span>: <span class="string">"^6.24.1"</span>,</span><br><span class="line">       <span class="string">"bootstrap"</span>: <span class="string">"^4.0.0-beta"</span>,</span><br><span class="line">        <span class="string">"jquery"</span>: <span class="string">"^3.3.1"</span>,</span><br><span class="line">        <span class="string">"popper.js"</span>: <span class="string">"^1.14.3"</span>,</span><br><span class="line">        <span class="string">"webpack-dev-server"</span>: <span class="string">"^3.1.4"</span></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p><code>webpack.config.js</code>文件中配置：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">        <span class="keyword">new</span> webpack.ProvidePlugin(&#123;</span><br><span class="line">            jQuery: <span class="string">"jquery"</span>,</span><br><span class="line">            $: <span class="string">"jquery"</span>,</span><br><span class="line">            Popper: [<span class="string">'popper.js'</span>, <span class="string">'default'</span>],</span><br><span class="line">       &#125;)</span><br><span class="line">  ],</span><br></pre></td></tr></table></figure></p>
+<p>具体是什么原因我没有搞清楚，但是我不会放弃的，我还会继续搞清楚是为什么。<br>总之，配置完这些后bootstrap和query可以同时使用了，总算是解决了这个问题。</p>
+<blockquote>
+<p>小白webpack爬坑记<br>  <a href="mailto:webpack@4.14.0" target="_blank" rel="noopener">webpack@4.14.0</a><br>  webpack入门之插入样式和js路径<br>  author 道姑，请留步</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> ExtractTextPlugin(<span class="string">'stylesheets/[name].css'</span>),</span><br><span class="line"> <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">          filename: <span class="string">'index.html'</span>,       <span class="comment">//目标文件</span></span><br><span class="line">           template: <span class="string">'./src/index.html'</span>, <span class="comment">//模板文件</span></span><br><span class="line">           <span class="comment">//chunks: ['main', 'vendor'], // 通过文件名筛选加载样式和js</span></span><br><span class="line">           <span class="comment">//inject: 'head'              // 添加的位置</span></span><br><span class="line">       &#125;),</span><br></pre></td></tr></table></figure>
+<p>遇见的问题：<br>css出现url()解析路径错误的问题<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> test: <span class="regexp">/\.css$/</span>,</span><br><span class="line"> use: ExtractTextPlugin.extract(&#123;</span><br><span class="line">    fallback: <span class="string">"style-loader"</span>,</span><br><span class="line">     <span class="comment">//这样使用会出现url()解析路劲错误的问题</span></span><br><span class="line">     <span class="comment">//use:"css-loader"</span></span><br><span class="line">     use: [&#123;</span><br><span class="line">         loader: <span class="string">"css-loader"</span>,</span><br><span class="line">         options: &#123;</span><br><span class="line">          <span class="comment">//用于解决url()路劲解析错误</span></span><br><span class="line">          url: <span class="literal">false</span>,</span><br><span class="line">            minimize: <span class="literal">true</span>,</span><br><span class="line">            sourceMap: <span class="literal">true</span></span><br><span class="line">       &#125;</span><br><span class="line">     &#125;]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>关于图片的问题没有爬出来</p>
+<p>如何使用webpack完成多个页面的打包<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">    filename: <span class="string">'index.html'</span>,</span><br><span class="line">    template: <span class="string">'./src/index.html'</span></span><br><span class="line">&#125;),</span><br><span class="line"><span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">    filename: <span class="string">'app.html'</span>,</span><br><span class="line">    template: <span class="string">'./src/app.html'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     
